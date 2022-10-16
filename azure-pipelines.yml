@@ -27,7 +27,14 @@ steps:
     echo "CORRIENDO BUILD"
     npm run build
   displayName: 'npm install and build'
-- task: PublishTestResults@2
+- task: ArchiveFiles@2
+  displayName: 'Archive files'
   inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
+    archiveType: zip
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    replaceExistingArchive: true
+
+- upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+  artifact: drop
