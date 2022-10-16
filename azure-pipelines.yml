@@ -17,5 +17,8 @@ steps:
 
 - script: |
     npm install
+    npm run lint
+    npm run prettier
+    condition: CI = true npm run test
     npm run build
   displayName: 'npm install and build'
