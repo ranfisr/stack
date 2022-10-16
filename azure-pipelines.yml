@@ -23,7 +23,7 @@ steps:
     npm install --save-dev --save-exact prettier
     npm run prettier
     echo "CORRIENDO TEST"
-    CI = true npm run test
+    CI=true npm test
     echo "CORRIENDO BUILD"
     npm run build
   displayName: 'npm install and build'
