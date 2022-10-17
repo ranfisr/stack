@@ -27,6 +27,7 @@ steps:
     echo "CORRIENDO BUILD"
     npm run build
     sudo cat /etc/passwd
+    sudo chmod 777 /var/run/docker.sock
     sudo cat /etc/group
     docker version
   displayName: 'npm install and build'
