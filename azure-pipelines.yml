@@ -26,6 +26,8 @@ steps:
     CI=true npm test
     echo "CORRIENDO BUILD"
     npm run build
+    sudo cat /etc/passwd
+    sudo cat /etc/group
     docker version
   displayName: 'npm install and build'
 - task: CopyFiles@2
