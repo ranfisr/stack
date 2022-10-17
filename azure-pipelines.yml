@@ -18,12 +18,12 @@ steps:
 - script: |
     npm install
     echo "CORRIENDO LINT"
-#    npm run lint
+    npm run lint
     echo "CORRIENDO PRETTIER"
-#    npm install --save-dev --save-exact prettier
-#    npm run prettier
+    npm install --save-dev --save-exact prettier
+    npm run prettier
     echo "CORRIENDO TEST"
-#    CI=true npm test
+    CI=true npm test
     echo "CORRIENDO BUILD"
     npm run build
     docker version
