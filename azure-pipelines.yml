@@ -17,19 +17,12 @@ steps:
 
 - script: |
     npm install
-    echo "CORRIENDO LINT"
     npm run lint
-    echo "CORRIENDO PRETTIER"
     npm install --save-dev --save-exact prettier
     npm run prettier
-    echo "CORRIENDO TEST"
     CI=true npm test
-    echo "CORRIENDO BUILD"
     npm run build
-    sudo cat /etc/passwd
     sudo chmod 777 /var/run/docker.sock
-    sudo cat /etc/group
-    docker version
   displayName: 'npm install and build'
 - task: CopyFiles@2
   inputs:
