@@ -18,14 +18,15 @@ steps:
 - script: |
     npm install
     echo "CORRIENDO LINT"
-    npm run lint
+#    npm run lint
     echo "CORRIENDO PRETTIER"
-    npm install --save-dev --save-exact prettier
-    npm run prettier
+#    npm install --save-dev --save-exact prettier
+#    npm run prettier
     echo "CORRIENDO TEST"
-    CI=true npm test
+#    CI=true npm test
     echo "CORRIENDO BUILD"
     npm run build
+    docker version
   displayName: 'npm install and build'
 - task: CopyFiles@2
   inputs:
@@ -47,9 +48,9 @@ steps:
     artifactName: npm
   displayName: 'Publish npm artifact'
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'svc-testullstack'
-    repository: 'testfullstack'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+#- task: Docker@2
+#  inputs:
+#    containerRegistry: 'svc-testullstack'
+#    repository: 'testfullstack'
+#    command: 'buildAndPush'
+#    Dockerfile: '**/Dockerfile'
