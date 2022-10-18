@@ -20,36 +20,40 @@ steps:
   inputs:
     command: 'install'
     workingDir: '.'
+  displayName: 'npm install'
 
 - task: Npm@1
   inputs:
     command: 'custom'
     workingDir: '.'
     customCommand: 'run lint'
+  displayName: 'npm lint'
 
 - task: Npm@1
   inputs:
     command: 'custom'
     workingDir: '.'
     customCommand: 'install --save-dev --save-exact prettier'
+  displayName: 'install prettier'
 - task: Npm@1
   inputs:
     command: 'custom'
     workingDir: '.'
     customCommand: 'run prettier'
+  displayName: 'npm prettier'
 
 - script: |
 
     CI=true npm test
     sudo chmod 777 /var/run/docker.sock
   displayName: 'npm test'
+
 - task: Npm@1
   inputs:
     command: 'custom'
     workingDir: '.'
     customCommand: 'run build'
-
-
+  displayName: 'npm build'
 
 
 - task: CopyFiles@2
