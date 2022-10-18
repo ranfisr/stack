@@ -76,9 +76,9 @@ steps:
     artifactName: npm
   displayName: 'Publish npm artifact'
 
-#- task: Docker@2
-#  inputs:
-#    containerRegistry: 'svc-testullstack'
-#    repository: 'ranfisr/testfullstack'
-#    command: 'buildAndPush'
-#    Dockerfile: '**/Dockerfile'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'svc-testullstack'
+    repository: 'ranfisr/testfullstack'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
