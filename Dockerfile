@@ -8,13 +8,13 @@ WORKDIR /app
 COPY package*.json ./
 
 RUN npm install
-RUN npm install -g serve
+#RUN npm install -g serve
 
 # Copying rest of the application to app directory
 COPY . /app
 
 # Expose the port and start the application
-Expose 3000, 8080, 80
+Expose 3000 8080 80
 
 #CMD ["serve","-s build"]
 CMD ["npm","start"]
