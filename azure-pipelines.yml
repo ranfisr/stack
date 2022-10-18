@@ -21,9 +21,19 @@ steps:
     npm install --save-dev --save-exact prettier
     npm run prettier
     CI=true npm test
-    npm run build
     sudo chmod 777 /var/run/docker.sock
   displayName: 'npm install and build'
+  
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '.'
+    customCommand: 'run build'
+
+
+
+#    npm run build
+
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
