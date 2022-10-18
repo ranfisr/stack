@@ -69,7 +69,6 @@ const IPv4Addr = (props) => {
       {validAddress ? (
         <div className="results">
           <div>
-            <strong>BINARY:</strong>
             <span>{ipv4.getBinnary()}</span>
           </div>
           <div>
