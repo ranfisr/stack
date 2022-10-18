@@ -69,11 +69,11 @@ const IPv4Addr = (props) => {
       {validAddress ? (
         <div className="results">
           <div>
-            <strong>Binary :</strong>
+            <strong>BINARY:</strong>
             <span>{ipv4.getBinnary()}</span>
           </div>
           <div>
-            <strong>Network Address:</strong>
+            <strong>NETWORK ADDRESS:</strong>
             <span>{ipv4.networkAddress()}</span>
           </div>
           <div>
