@@ -106,7 +106,7 @@ const IPv4Addr = (props) => {
             <span>{ipv4.count()}</span>
           </div>
           <div>
-            <strong>Usable addresses:<strong>
+            <strong>Usable addresses:</strong>
             <span>{ipv4.availableCount()}</span>
           </div>
           <div>
